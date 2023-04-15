@@ -1,0 +1,77 @@
+
+import java.util.Random;
+import java.io.*;
+public class GuessGame
+{
+    public static void main (String args[])throws IOException
+    {
+        BufferedReader br = new BufferedReader (new InputStreamReader(System.in));
+        int guess;
+        Random rand=new Random();
+        int n=rand.nextInt(101);
+      // int n = (int) (Math.random() * 99 + 1);
+       int i;
+        // System.out.println("Random Integer generated is: "+n);
+         
+    
+        System.out.println("A random number has been generated between 1-100");
+         System.out.println(" ");
+        System.out.println("You get only FIVE chances");
+         System.out.println(" ");
+        System.out.println("The scoring system is as follows: ");
+        System.out.println("1st try: 10/10");
+        System.out.println("2nd try: 8/10");
+        System.out.println("3rd try:6/10");
+        System.out.println("4th try:4/10");
+        System.out.println("5th try:2/10");
+         System.out.println(" ");
+          System.out.println(" ");
+          
+        for( i=1;i<6;i++)
+         {
+             System.out.println("ENTER YOU GUESS:");
+             guess=Integer.parseInt(br.readLine());
+          
+                if (guess == n)
+                {    
+                    System.out.println("The number you guessed is CORRECT. You WIN the Game!");
+                    break;
+                }
+                else if (guess < n)
+                    System.out.println("The number you guessed is Smaller. Go HIGHER!");
+                else if (guess > n)
+                    System.out.println("The number you guesses is Greater. Go LOWER!");
+         }
+         if(i==1)
+         System.out.println("10/10");
+         if(i==2)
+         System.out.println("8/10");
+         if(i==3)
+         System.out.println("6/10");
+         if(i==4)
+         System.out.println("4/10");
+         if(i==5)
+         System.out.println("2/10");
+         if(i==6)
+         System.out.println("You have exceeded the maximum attempts your score is 0/10");
+                    
+                
+                
+                 
+           
+    }
+        
+}
+      
+
+
+
+
+
+
+
+
+
+
+
+
