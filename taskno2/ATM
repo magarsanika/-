@@ -1,0 +1,63 @@
+
+import java.io.*;
+public class ATM
+{
+  public static void main (String args[])throws IOException
+    {
+        BufferedReader br = new BufferedReader (new InputStreamReader (System.in));
+        
+         System.out.println("enter user id");
+         int id=Integer.parseInt(br.readLine());
+         System.out.println("enter user pin");
+         int pin =Integer.parseInt(br.readLine());
+         System.out.println("ENTER:");
+         System.out.println(" 1:transaction history \n 2:Withdrawal \n 3:Deposit \n 4:Transfer \n 5:Quit");
+         int n=Integer.parseInt(br.readLine());
+           int balance=50000;
+           switch(n)
+            {
+              case 1:
+                System.out.println("Transaction History");
+                break;
+              case 2:
+                  
+                    System.out.println("enter amount to be withdrawn");
+                    int withdraw=Integer.parseInt(br.readLine());
+                    if(balance>=withdraw)
+                   {
+                     balance=balance-withdraw;
+                     System.out.println ("remaining balance: "+balance);
+                   }
+                    else
+                    System.out.println("insufficient balance");
+                  break;
+              case 3:
+                System.out.println("enter amount to be deposited");
+                int deposit=Integer.parseInt(br.readLine());
+                balance=balance+deposit;
+                System.out.println("Account balance: "+balance);
+                break;
+              case 4:
+                System.out.println("For transfer \n enter their user id ");
+                int id2=Integer.parseInt(br.readLine());
+                System.out.println(" amount to tranfer");
+                int amt= Integer.parseInt(br.readLine());// amt= the amount to be tranfered.
+                if(balance>=amt)
+                {
+                  balance= balance-amt;
+                  System.out.println("balance after tranfer: "+balance);
+                }
+                else
+                System.out.println("insufficient blance");
+                break;
+              case 5:
+               System.out.println("Thank you for using our ATM");
+               break;
+              default:
+              System.out.println("invalid input");
+            }
+         
+        
+    }
+     
+}
